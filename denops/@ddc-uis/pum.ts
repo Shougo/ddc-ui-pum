@@ -15,7 +15,7 @@ export class Ui extends BaseUi<Params> {
         helper.define(
           "User",
           "PumCompleteDone",
-          "ddc#on_complete_done(g:pum#completed_item)",
+          "call ddc#on_complete_done(g:pum#completed_item)",
         );
       },
     );
