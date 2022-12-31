@@ -1,6 +1,6 @@
-import { Context, DdcItem } from "https://deno.land/x/ddc_vim@v3.3.0/types.ts";
-import { BaseUi } from "https://deno.land/x/ddc_vim@v3.3.0/base/ui.ts";
-import { autocmd, Denops } from "https://deno.land/x/ddc_vim@v3.3.0/deps.ts";
+import { Context, DdcItem } from "https://deno.land/x/ddc_vim@v3.4.0/types.ts";
+import { BaseUi } from "https://deno.land/x/ddc_vim@v3.4.0/base/ui.ts";
+import { autocmd, Denops } from "https://deno.land/x/ddc_vim@v3.4.0/deps.ts";
 
 export type Params = Record<never, never>;
 
@@ -45,6 +45,12 @@ export class Ui extends BaseUi<Params> {
     denops: Denops;
   }): Promise<void> {
     await args.denops.call("pum#close");
+  }
+
+  override async visible(args: {
+    denops: Denops;
+  }): Promise<boolean> {
+    return await args.denops.call("pum#visible") as boolean;
   }
 
   override params(): Params {
