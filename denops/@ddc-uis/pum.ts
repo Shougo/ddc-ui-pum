@@ -1,8 +1,14 @@
 import { Context, DdcItem } from "https://deno.land/x/ddc_vim@v3.4.0/types.ts";
 import { BaseUi } from "https://deno.land/x/ddc_vim@v3.4.0/base/ui.ts";
-import { autocmd, Denops } from "https://deno.land/x/ddc_vim@v3.4.0/deps.ts";
+import {
+  autocmd,
+  Denops,
+  fn,
+} from "https://deno.land/x/ddc_vim@v3.4.0/deps.ts";
 
-export type Params = Record<never, never>;
+export type Params = {
+  insert: boolean;
+};
 
 export class Ui extends BaseUi<Params> {
   override async onInit(args: {
@@ -38,6 +44,8 @@ export class Ui extends BaseUi<Params> {
       "pum#open",
       args.completePos + 1,
       args.items,
+      await fn.mode(args.denops),
+      args.uiParams.insert,
     );
   }
 
@@ -54,6 +62,8 @@ export class Ui extends BaseUi<Params> {
   }
 
   override params(): Params {
-    return {};
+    return {
+      insert: false,
+    };
   }
 }
