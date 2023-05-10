@@ -40,6 +40,11 @@ export class Ui extends BaseUi<Params> {
     items: DdcItem[];
     uiParams: Params;
   }): Promise<void> {
+    // Skip if item is selected
+    if (await args.denops.call("pum#entered") as boolean) {
+      return;
+    }
+
     await args.denops.call(
       "pum#open",
       args.completePos + 1,
