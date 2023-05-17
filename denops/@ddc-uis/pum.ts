@@ -55,6 +55,11 @@ export class Ui extends BaseUi<Params> {
       await fn.mode(args.denops),
       args.uiParams.insert,
     );
+
+    if (args.context.event === "Manual" && args.context.mode === "t") {
+      // NOTE: Must skip the next complete in terminal mode
+      await args.denops.call("pum#_inc_skip_complete");
+    }
   }
 
   override async hide(args: {
