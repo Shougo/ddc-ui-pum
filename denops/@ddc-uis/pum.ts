@@ -41,7 +41,10 @@ export class Ui extends BaseUi<Params> {
     uiParams: Params;
   }): Promise<void> {
     // Skip if item is selected
-    if (await args.denops.call("pum#entered") as boolean) {
+    if (
+      args.context.event === "Update" &&
+      await args.denops.call("pum#entered") as boolean
+    ) {
       return;
     }
 
