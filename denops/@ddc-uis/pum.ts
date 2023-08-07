@@ -71,7 +71,7 @@ export class Ui extends BaseUi<Params> {
   override async visible(args: {
     denops: Denops;
   }): Promise<boolean> {
-    return await args.denops.call("pum#visible") !== 0;
+    return Boolean(await args.denops.call("pum#visible"));
   }
 
   override params(): Params {
