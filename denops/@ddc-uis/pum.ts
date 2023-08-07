@@ -1,10 +1,10 @@
-import { Context, DdcItem } from "https://deno.land/x/ddc_vim@v3.4.0/types.ts";
-import { BaseUi } from "https://deno.land/x/ddc_vim@v3.4.0/base/ui.ts";
+import { Context, DdcItem } from "https://deno.land/x/ddc_vim@v3.9.2/types.ts";
+import { BaseUi } from "https://deno.land/x/ddc_vim@v3.9.2/base/ui.ts";
 import {
   autocmd,
   Denops,
   fn,
-} from "https://deno.land/x/ddc_vim@v3.4.0/deps.ts";
+} from "https://deno.land/x/ddc_vim@v3.9.2/deps.ts";
 
 export type Params = {
   insert: boolean;
@@ -48,10 +48,18 @@ export class Ui extends BaseUi<Params> {
       return;
     }
 
+    // Set dup attribute
+    const items = args.items.map((item) => (
+      {
+        ...item,
+        dup: true,
+      }
+    ));
+
     await args.denops.call(
       "pum#open",
       args.completePos + 1,
-      args.items,
+      items,
       await fn.mode(args.denops),
       args.uiParams.insert,
     );
