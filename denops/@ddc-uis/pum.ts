@@ -1,7 +1,10 @@
-import { Context, DdcItem, Denops } from "jsr:@shougo/ddc-vim@6.0.0/types";
+import { type Context, type DdcItem } from "jsr:@shougo/ddc-vim@6.0.0/types";
 import { BaseUi } from "jsr:@shougo/ddc-vim@6.0.0/ui";
-import * as fn from "jsr:@denops/std@7.0.0/function";
-import * as autocmd from "jsr:@denops/std@7.0.0/autocmd";
+
+import type { Denops } from "jsr:@denops/core@^7.0.0";
+
+import * as fn from "jsr:@denops/std@7.0.1/function";
+import * as autocmd from "jsr:@denops/std@7.0.1/autocmd";
 
 export type Params = {
   insert: boolean;
