@@ -3,7 +3,7 @@
 Author: Shougo <Shougo.Matsu at gmail.com>
 License: MIT license
 
-CONTENTS						*ddc-ui-pum-contents*
+CONTENTS                                                 *ddc-ui-pum-contents*
 
 Introduction		|ddc-ui-pum-introduction|
 Install			|ddc-ui-pum-install|
@@ -12,13 +12,13 @@ Params			|ddc-ui-pum-params|
 
 
 ==============================================================================
-INTRODUCTION					*ddc-ui-pum-introduction*
+INTRODUCTION                                         *ddc-ui-pum-introduction*
 
 This UI uses pum.vim's popup menu.
 
 
 ==============================================================================
-INSTALL							*ddc-ui-pum-install*
+INSTALL                                                   *ddc-ui-pum-install*
 
 Please install "denops.vim", "ddc.vim" and "pum.vim".
 
@@ -28,16 +28,15 @@ https://github.com/Shougo/pum.vim
 
 
 ==============================================================================
-EXAMPLES						*ddc-ui-pum-examples*
->
->
+EXAMPLES                                                 *ddc-ui-pum-examples*
+>vim
 	call ddc#custom#patch_global('ui', 'pum')
 <
 
 ==============================================================================
-PARAMS							*ddc-ui-pum-params*
+PARAMS                                                     *ddc-ui-pum-params*
 
-				    	    	*ddc-ui-pum-param-insert*
+                                                     *ddc-ui-pum-param-insert*
 insert		(boolean)
 		Insert the first item automatically.
 		It is useful for manual completion.
