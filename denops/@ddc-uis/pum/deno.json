@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "@shougo/ddc-vim": "jsr:@shougo/ddc-vim@~9.5.0",
+    "@denops/std": "jsr:@denops/std@~7.6.0"
+  }
+}
