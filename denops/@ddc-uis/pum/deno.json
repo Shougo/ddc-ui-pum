@@ -1,7 +1,12 @@
 {
   "name": "@shougo/ddc-ui-pum",
   "exports": {
-    "./main": "./main.ts"
+    ".": "./main.ts"
+  },
+  "publish": {
+    "include": [
+      "**/*.ts"
+    ]
   },
   "imports": {
     "@shougo/ddc-vim": "jsr:@shougo/ddc-vim@~10.0.0",
